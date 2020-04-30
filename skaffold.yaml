@@ -1,0 +1,8 @@
+apiVersion: skaffold/v2beta2
+kind: Config
+build:
+  artifacts:
+  - image: skaffold-jib
+    # jib: {}
+    custom:
+      buildCommand: mvn package jib:build -Dimage=dwctua/test:v1 -Djib.to.auth.username=abc -Djib.to.auth.password=xyz 
